@@ -9,10 +9,21 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    var points: Int?
+    @IBOutlet weak var descriptionText: UILabel!
+    @IBOutlet weak var percentageText: UILabel!
+    @IBOutlet weak var restartButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationItem.hidesBackButton = true
+        restartButton.layer.cornerRadius = 12
+        
+        if let points = points {
+            let percentage = ceil(Double(points) / Double(questions.count) * 100.0)
+            descriptionText.text = "You got \(points) out of \(questions.count) question right."
+            percentageText.text = "Final percentage: \(Int(percentage))%"
+        }
     }
     
 

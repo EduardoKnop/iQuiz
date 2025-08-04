@@ -16,10 +16,6 @@ class HomeViewController: UIViewController {
         navigationItem.hidesBackButton = true
         buttonStart.layer.cornerRadius = 12.0
     }
-
-    @IBAction func buttonStartPressed(_ sender: Any) {
-        print("Button Start Pressed")
-    }
     
 }
 
